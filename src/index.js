@@ -1,15 +1,15 @@
 const express = require("express");
-//const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/", (req, res) => {
 
-  app.use(express.json())
-  app.use(express.urlencoded({ extended: true }));
-  
   const data = req.body;
   console.log("req.body", data);
   res.send("api ok");
@@ -17,7 +17,6 @@ app.post("/", (req, res) => {
   const messageId = req.body["events"][0]["message"]["id"];
   console.log(messageId);
  
-  
 });
 
 process.env.NOW_REGION
