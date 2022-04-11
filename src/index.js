@@ -9,6 +9,10 @@ app.post("/", (req, res) => {
   const data = req.body;
   console.log("req.body", data);
   res.send("api ok");
+
+  const messageId = req.body["events"][0]["message"]["id"];
+  console.log(messageId);
+ 
   app.use(express.json())
   app.use(express.urlencoded({ extended: true }));
 });
