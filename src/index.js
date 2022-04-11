@@ -15,16 +15,12 @@ app.post("/", (req, res) => {
   const data = req.body;
   console.log("req.body", data);
   res.send("api ok");
+  app.use(express.json())
+  app.use(express.urlencoded({ extended: true }));
 });
 
 //なくてよい
-app.post("/", (req, res) => {
-  const data = req.body;
-  console.log("req.body", data);
-  const messageID = data["events"][0]["message"]["id"];
-  console.log("messageID:", messageID);
-  res.send("api:OK");
-});
+
 
 //app.listen(3000, () => console.log("Listening on port 3000"));
 process.env.NOW_REGION
