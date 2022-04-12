@@ -28,9 +28,10 @@ app.post("/", (req, res) => {
 };
 
 request(options,function(error, response, body) {
+  console.log(body);
   const buffer = new Buffer.from(body);
   console.log(buffer);
-  console.log(body);
+  
 });
 
 const options_tocv= {
