@@ -30,18 +30,18 @@ app.post("/", (req, res) => {
 request(options,function(error, response, body) {
   const buffer = new Buffer.from(body);
   console.log(buffer);
+  const option={
+    url: "https://leadhack51stcentralindia-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/e5b423cb-c18b-40e4-b640-29eb206e4d86/classify/iterations/Iteration1/image",
+    method: "post",
+    headers:{
+      "Content-Type":"application/octet-stream",
+      "Prediction-Key":"7254f5b6e9004fa6aeb869d0a76dc317",
+    },
+    body: buffer,
+  };
   
 });
 
-const options_tocv= {
-  uri: "https://leadhack51stcentralindia-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/e5b423cb-c18b-40e4-b640-29eb206e4d86/classify/iterations/Iteration1/image",
-  headers: {
-    "Content-type": "application/json",
-  },
-  json: {
-    "key1": buffer
-  }
-};
 
 request.post(options, function(error, response, body){});
  
