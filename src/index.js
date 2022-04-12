@@ -22,7 +22,7 @@ app.post("/", (req, res) => {
     url: `https://api-data.line.me/v2/bot/message/${req.body.events[0].message.id}/content`,
     method: 'get',
     headers: {
-       'Authorization': 'Bearer ' + accessToken,
+       'Authorization': 'Bearer ' + 'tX5KNspepXrnrZChWBzw1r6HEPyTE1X+iyhvJOjtjLqpm6wLypGnwSSdEFEC3nc5Anj+SwkDtQNJrYOr7rbULBC7mUN72tPwAAzw+w71P1kJbnOcA3ogFpE+spZT66UxaHCSK+84vA+Vfl0aYL3obgdB04t89/1O/w1cDnyilFU=',
     },
     encoding: null
 };
