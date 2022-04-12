@@ -45,7 +45,8 @@ app.post("/", (req, res) => {
 
 
 request.post(options, function(error, response, body){});
-  console.log(body);
+  const resBody = JSON.parse(body);
+  console.log(resBody);
 });
 
 process.env.NOW_REGION
