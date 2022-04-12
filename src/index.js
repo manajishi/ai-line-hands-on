@@ -39,13 +39,13 @@ app.post("/", (req, res) => {
       },
       body: buffer,
   };
-  
-  
+  const resBody = JSON.parse(body);
+   
 });
 
 
 request.post(options, function(error, response, body){});
-  const resBody = JSON.parse(body);
+  
   console.log(resBody);
 });
 
