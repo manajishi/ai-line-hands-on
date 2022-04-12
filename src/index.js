@@ -18,7 +18,7 @@ app.post("/", (req, res) => {
   const messageId = req.body["events"][0]["message"]["id"];
   console.log(messageId);
 
- const options = {
+  const options = {
     url: `https://api-data.line.me/v2/bot/message/${req.body.events[0].message.id}/content`,
     method: 'get',
     headers: {
@@ -30,8 +30,21 @@ app.post("/", (req, res) => {
 request(options,function(error, response, body) {
   const buffer = new Buffer.from(body);
   console.log(buffer);
+  console.log(body);
 });
 
+const options_tocv= {
+  uri: "https://leadhack51stcentralindia-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/e5b423cb-c18b-40e4-b640-29eb206e4d86/classify/iterations/Iteration1/image",
+  headers: {
+    "Content-type": "application/json",
+  },
+  json: {
+    "key1": "param1",
+    "key2": "param2"
+  }
+};
+
+request.post(options, function(error, response, body){});
  
 });
 
