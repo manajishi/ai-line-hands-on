@@ -39,13 +39,13 @@ app.post("/", (req, res) => {
       },
       body: buffer,
   };
-  console.log(body);
+  
   
 });
 
 
 request.post(options, function(error, response, body){});
- 
+  console.log(body);
 });
 
 process.env.NOW_REGION
