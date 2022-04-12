@@ -28,7 +28,6 @@ app.post("/", (req, res) => {
 };
 
 request(options,function(error, response, body) {
-  console.log(body);
   const buffer = new Buffer.from(body);
   console.log(buffer);
   
@@ -40,8 +39,7 @@ const options_tocv= {
     "Content-type": "application/json",
   },
   json: {
-    "key1": "param1",
-    "key2": "param2"
+    "key1": buffer
   }
 };
 
