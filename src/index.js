@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+const request = require('request');
+ 
 app.use(bodyParser.json());
 
 app.use(express.json())
@@ -16,6 +17,21 @@ app.post("/", (req, res) => {
 
   const messageId = req.body["events"][0]["message"]["id"];
   console.log(messageId);
+
+  const options = {
+    url: `https://api-data.line.me/v2/bot/message/${req.body.events[0].message.id}/content`,
+    method: 'get',
+    headers: {
+       'Authorization': 'Bearer ' + accessToken,
+    },
+    encoding: null
+};
+
+request(options, function(error, response, body) {
+  const buffer = new Buffer.from(body);
+  console.log(buffer);
+});
+
  
 });
 
