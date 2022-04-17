@@ -44,9 +44,9 @@ app.post("/", (req, res) => {
 });
 
 
-request.post(options, function(error, response, body){});
+request.post(option, function(error, response, body){});
   
-  console.log(resBody);
+  console.log(Body);
 });
 
 process.env.NOW_REGION
